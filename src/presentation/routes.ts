@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { CasaRoutes } from "./casas/routes";
+import { HouseRoutes } from "./houses/routes";
 
 export class AppRoutes {
 
     static get routes(): Router {
         const router = Router();
-        router.use('/api/casas', CasaRoutes.routes);
+        router.use('/api/houses', HouseRoutes.routes);
         return router;
     }
 

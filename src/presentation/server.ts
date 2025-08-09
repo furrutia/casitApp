@@ -1,4 +1,5 @@
 import express, { Router } from 'express';
+const cors = require('cors');
 
 interface Options {
     port: number,
@@ -28,6 +29,10 @@ export class Server {
 
         //Public Folder
         this.app.use(express.static(this.publicPath));
+
+        // Habilita CORS para un origen específico
+        const corsOptions = { origin: 'http://localhost:5173' };
+        this.app.use(cors(corsOptions));
 
         //Routes
         this.app.use(this.routes);
