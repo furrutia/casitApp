@@ -1,23 +1,32 @@
-export interface Location {
+interface Location {
     neighborhood: string;
+    locality: string;
     googleMapsLink: string; // Link to Google Maps
 }
-
-export interface Features {
+interface Value {
+    amount: number;
+    currency: string; // e.g., "USD", "EUR"
+    expenses: number;
+}
+interface Area {
+    totalArea: number;
+    coveredArea: number;
+    unit: string; // e.g., "m²", "ft²"
+}
+interface Features {
     rooms: number;
     bathrooms: number;
     age: number;
-    surfaceArea: number;
     type: string;
 }
-
 export interface House {
     id: number;
     description: string;
-    value: number;
-    expenses: number;
+    value: Value;
+    area: Area;
     status: string;
     images: string[];
     location: Location;
     features: Features;
+    isFavorite: boolean;
 }

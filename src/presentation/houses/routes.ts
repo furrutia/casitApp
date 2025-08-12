@@ -10,7 +10,7 @@ export class HouseRoutes {
         const houseController = new HouseController();
 
         router.get('/', houseController.getHouses);
-        // router.get('/barrio', casaController.getCasasByBarrio);
+        router.get('/:neighborhood', houseController.getHousesByNeighborhood);
         // router.get('/valor', casaController.getCasasByValor);
         // router.get('/barrio-valor', casaController.getCasasByBarrioAndValor);
         router.get('/:id', houseController.getHouseById);

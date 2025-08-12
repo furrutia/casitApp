@@ -1,362 +1,142 @@
 [
   {
     "id": 1,
-    "description": "Hermosa casa en el centro",
-    "value": 250000,
-    "expenses": 500,
+    "description": "Casa moderna en el centro",
+    "value": {
+      "amount": 250000,
+      "currency": "USD",
+      "expenses": 500
+    },
+    "area": {
+      "totalArea": 120,
+      "coveredArea": 100,
+      "unit": "m²"
+    },
     "status": "Disponible",
-    "images": ["imagenes/CASA1.webp"],
+    "images": ["images/CASA1.webp", "images/CASA2.jpeg"],
     "location": {
-      "neighborhood": "Centro"
+      "neighborhood": "Centro",
+      "locality": "Ciudad Autónoma de Buenos Aires",
+      "googleMapsLink": "https://www.google.com/maps?q=-34.6037,-58.3816"
     },
     "features": {
       "rooms": 3,
       "bathrooms": 2,
       "age": 10,
-      "surfaceArea": 120,
       "type": "Casa"
-    }
+    },
+    "isFavorite": false
   },
   {
     "id": 2,
-    "description": "Amplio departamento con vista al mar",
-    "value": 320000,
-    "expenses": 700,
+    "description": "Departamento con vista al río",
+    "value": {
+      "amount": 320000,
+      "currency": "USD",
+      "expenses": 700
+    },
+    "area": {
+      "totalArea": 80,
+      "coveredArea": 75,
+      "unit": "m²"
+    },
     "status": "Disponible",
-    "images": ["imagenes/CASA2.jpeg", "imagenes/CASA3.jpeg"],
+    "images": ["images/CASA3.jpeg"],
     "location": {
-      "neighborhood": "Recoleta"
+      "neighborhood": "Puerto Madero",
+      "locality": "Ciudad Autónoma de Buenos Aires",
+      "googleMapsLink": "https://www.google.com/maps?q=-34.6133,-58.3617"
     },
     "features": {
       "rooms": 2,
       "bathrooms": 1,
       "age": 5,
-      "surfaceArea": 80,
       "type": "Departamento"
-    }
+    },
+    "isFavorite": true
   },
   {
     "id": 3,
     "description": "Casa quinta con pileta y jardín",
-    "value": 450000,
-    "expenses": 0,
+    "value": {
+      "amount": 450000,
+      "currency": "USD",
+      "expenses": 0
+    },
+    "area": {
+      "totalArea": 250,
+      "coveredArea": 180,
+      "unit": "m²"
+    },
     "status": "Disponible",
-    "images": ["imagenes/CASA1.webp", "imagenes/CASA2.jpeg", "imagenes/CASA3.jpeg"],
+    "images": ["images/CASA1.webp", "images/CASA4.webp"],
     "location": {
-      "neighborhood": "Olivos"
+      "neighborhood": "Olivos",
+      "locality": "Buenos Aires",
+      "googleMapsLink": "https://www.google.com/maps?q=-34.5083,-58.4708"
     },
     "features": {
       "rooms": 4,
       "bathrooms": 3,
       "age": 15,
-      "surfaceArea": 250,
       "type": "Casa Quinta"
-    }
+    },
+    "isFavorite": false
   },
   {
     "id": 4,
-    "description": "Moderno loft en zona industrial",
-    "value": 280000,
-    "expenses": 600,
+    "description": "Loft moderno en zona industrial",
+    "value": {
+      "amount": 280000,
+      "currency": "USD",
+      "expenses": 600
+    },
+    "area": {
+      "totalArea": 60,
+      "coveredArea": 60,
+      "unit": "m²"
+    },
     "status": "Disponible",
-    "images": ["imagenes/CASA4.webp"],
+    "images": ["images/CASA4.webp"],
     "location": {
-      "neighborhood": "Palermo"
+      "neighborhood": "Palermo",
+      "locality": "Ciudad Autónoma de Buenos Aires",
+      "googleMapsLink": "https://www.google.com/maps?q=-34.5842,-58.4200"
     },
     "features": {
       "rooms": 1,
       "bathrooms": 1,
       "age": 2,
-      "surfaceArea": 60,
       "type": "Loft"
-    }
+    },
+    "isFavorite": true
   },
   {
     "id": 5,
     "description": "Casa antigua reciclada con encanto",
-    "value": 380000,
-    "expenses": 400,
+    "value": {
+      "amount": 380000,
+      "currency": "USD",
+      "expenses": 400
+    },
+    "area": {
+      "totalArea": 150,
+      "coveredArea": 120,
+      "unit": "m²"
+    },
     "status": "Disponible",
-    "images": ["imagenes/CASA1.webp", "imagenes/CASA2.jpeg"],
+    "images": ["images/CASA2.jpeg", "images/CASA3.jpeg", "images/CASA4.webp"],
     "location": {
-      "neighborhood": "San Telmo"
+      "neighborhood": "San Telmo",
+      "locality": "Ciudad Autónoma de Buenos Aires",
+      "googleMapsLink": "https://www.google.com/maps?q=-34.6177,-58.3664"
     },
     "features": {
       "rooms": 3,
       "bathrooms": 2,
       "age": 80,
-      "surfaceArea": 150,
       "type": "Casa"
-    }
-  },
-  {
-    "id": 6,
-    "description": "Departamento luminoso con balcón terraza",
-    "value": 290000,
-    "expenses": 800,
-    "status": "Disponible",
-    "images": ["imagenes/CASA3.jpeg"],
-    "location": {
-      "neighborhood": "Belgrano"
     },
-    "features": {
-      "rooms": 2,
-      "bathrooms": 1,
-      "age": 12,
-      "surfaceArea": 75,
-      "type": "Departamento"
-    }
-  },
-  {
-    "id": 7,
-    "description": "Casa de estilo colonial con patio interno",
-    "value": 420000,
-    "expenses": 300,
-    "status": "Disponible",
-    "images": ["imagenes/CASA1.webp", "imagenes/CASA2.jpeg", "imagenes/CASA3.jpeg", "imagenes/CASA4.webp"],
-    "location": {
-      "neighborhood": "Monserrat"
-    },
-    "features": {
-      "rooms": 4,
-      "bathrooms": 2,
-      "age": 100,
-      "surfaceArea": 200,
-      "type": "Casa"
-    }
-  },
-  {
-    "id": 8,
-    "description": "Departamento amueblado con amenities",
-    "value": 350000,
-    "expenses": 900,
-    "status": "Disponible",
-    "images": ["imagenes/CASA2.jpeg"],
-    "location": {
-      "neighborhood": "Puerto Madero"
-    },
-    "features": {
-      "rooms": 2,
-      "bathrooms": 2,
-      "age": 8,
-      "surfaceArea": 90,
-      "type": "Departamento"
-    }
-  },
-  {
-    "id": 9,
-    "description": "Casa con gran terreno y quincho",
-    "value": 500000,
-    "expenses": 0,
-    "status": "Disponible",
-    "images": ["imagenes/CASA1.webp", "imagenes/CASA4.webp"],
-    "location": {
-      "neighborhood": "Vicente López"
-    },
-    "features": {
-      "rooms": 5,
-      "bathrooms": 3,
-      "age": 20,
-      "surfaceArea": 300,
-      "type": "Casa"
-    }
-  },
-  {
-    "id": 10,
-    "description": "Departamento con vista panorámica",
-    "value": 400000,
-    "expenses": 1000,
-    "status": "Disponible",
-    "images": ["imagenes/CASA3.jpeg", "imagenes/CASA4.webp"],
-    "location": {
-      "neighborhood": "Núñez"
-    },
-    "features": {
-      "rooms": 3,
-      "bathrooms": 2,
-      "age": 15,
-      "surfaceArea": 110,
-      "type": "Departamento"
-    }
-  },
-  {
-    "id": 11,
-    "description": "Casa estilo minimalista con jardín zen",
-    "value": 370000,
-    "expenses": 0,
-    "status": "Disponible",
-    "images": ["imagenes/CASA1.webp"],
-    "location": {
-      "neighborhood": "Villa Urquiza"
-    },
-    "features": {
-      "rooms": 3,
-      "bathrooms": 2,
-      "age": 7,
-      "surfaceArea": 140,
-      "type": "Casa"
-    }
-  },
-  {
-    "id": 12,
-    "description": "Departamento con excelente ubicación",
-    "value": 310000,
-    "expenses": 750,
-    "status": "Disponible",
-    "images": ["imagenes/CASA2.jpeg", "imagenes/CASA3.jpeg"],
-    "location": {
-      "neighborhood": "Caballito"
-    },
-    "features": {
-      "rooms": 2,
-      "bathrooms": 1,
-      "age": 10,
-      "surfaceArea": 70,
-      "type": "Departamento"
-    }
-  },
-  {
-    "id": 13,
-    "description": "Casa con detalles de categoría",
-    "value": 480000,
-    "expenses": 0,
-    "status": "Disponible",
-    "images": ["imagenes/CASA4.webp"],
-    "location": {
-      "neighborhood": "San Isidro"
-    },
-    "features": {
-      "rooms": 4,
-      "bathrooms": 3,
-      "age": 18,
-      "surfaceArea": 280,
-      "type": "Casa"
-    }
-  },
-  {
-    "id": 14,
-    "description": "Departamento con amenities de lujo",
-    "value": 420000,
-    "expenses": 1100,
-    "status": "Disponible",
-    "images": ["imagenes/CASA1.webp", "imagenes/CASA2.jpeg", "imagenes/CASA3.jpeg"],
-    "location": {
-      "neighborhood": "Retiro"
-    },
-    "features": {
-      "rooms": 3,
-      "bathrooms": 2,
-      "age": 9,
-      "surfaceArea": 100,
-      "type": "Departamento"
-    }
-  },
-  {
-    "id": 15,
-    "description": "Casa con jardín y parrilla",
-    "value": 390000,
-    "expenses": 0,
-    "status": "Disponible",
-    "images": ["imagenes/CASA2.jpeg"],
-    "location": {
-      "neighborhood": "Villa Devoto"
-    },
-    "features": {
-      "rooms": 4,
-      "bathrooms": 2,
-      "age": 14,
-      "surfaceArea": 160,
-      "type": "Casa"
-    }
-  },
-  {
-    "id": 16,
-    "description": "Departamento con balcón y vista abierta",
-    "value": 330000,
-    "expenses": 850,
-    "status": "Disponible",
-    "images": ["imagenes/CASA3.jpeg", "imagenes/CASA4.webp"],
-    "location": {
-      "neighborhood": "Colegiales"
-    },
-    "features": {
-      "rooms": 2,
-      "bathrooms": 1,
-      "age": 11,
-      "surfaceArea": 78,
-      "type": "Departamento"
-    }
-  },
-  {
-    "id": 17,
-    "description": "Casa con estilo moderno y funcional",
-    "value": 460000,
-    "expenses": 0,
-    "status": "Disponible",
-    "images": ["imagenes/CASA1.webp"],
-    "location": {
-      "neighborhood": "Martínez"
-    },
-    "features": {
-      "rooms": 4,
-      "bathrooms": 3,
-      "age": 6,
-      "surfaceArea": 260,
-      "type": "Casa"
-    }
-  },
-  {
-    "id": 18,
-    "description": "Departamento con detalles de diseño",
-    "value": 360000,
-    "expenses": 950,
-    "status": "Disponible",
-    "images": ["imagenes/CASA2.jpeg", "imagenes/CASA3.jpeg", "imagenes/CASA4.webp"],
-    "location": {
-      "neighborhood": "Las Cañitas"
-    },
-    "features": {
-      "rooms": 2,
-      "bathrooms": 2,
-      "age": 7,
-      "surfaceArea": 85,
-      "type": "Departamento"
-    }
-  },
-  {
-    "id": 19,
-    "description": "Casa con pileta climatizada y jacuzzi",
-    "value": 520000,
-    "expenses": 0,
-    "status": "Disponible",
-    "images": ["imagenes/CASA1.webp"],
-    "location": {
-      "neighborhood": "Acassuso"
-    },
-    "features": {
-      "rooms": 5,
-      "bathrooms": 4,
-      "age": 16,
-      "surfaceArea": 320,
-      "type": "Casa"
-    }
-  },
-  {
-    "id": 20,
-    "description": "Departamento con vista al río",
-    "value": 410000,
-    "expenses": 1050,
-    "status": "Disponible",
-    "images": ["imagenes/CASA3.jpeg"],
-    "location": {
-      "neighborhood": "Olivos"
-    },
-    "features": {
-      "rooms": 3,
-      "bathrooms": 2,
-      "age": 13,
-      "surfaceArea": 115,
-      "type": "Departamento"
-    }
+    "isFavorite": false
   }
 ]

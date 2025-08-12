@@ -22,4 +22,13 @@ export class HouseServices {
         return await new HouseRepository().updateHouse(id, updatedHouse);
     }
 
+    public async deleteHouse(id: number): Promise<number | undefined> {
+        return await new HouseRepository().deleteHouse(id);
+    }
+
+    public async getHousesByNeighborhood(neighborhood: string): Promise<House[]> {
+        const houses: House[] = await this.getHouses();
+        return houses.filter(house => house.location.neighborhood.toLowerCase() === neighborhood.toLowerCase());
+    }
+
 }

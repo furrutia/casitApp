@@ -27,20 +27,52 @@ export class HouseRepository {
         const houseIndex = houses.findIndex(house => house.id === id);
         if (houseIndex === -1) return undefined;
 
-        const { description, value, expenses, status, images, location, features } = houses[houseIndex]!;
+        const { description, value, area, status, images, location, features, isFavorite } = houses[houseIndex]!;
         const newHouse: House = {
             id: id,
             description: updatedHouse.description ?? description,
-            value: updatedHouse.value ?? value,
-            expenses: updatedHouse.expenses ?? expenses,
+            value: {
+                amount: updatedHouse.value?.amount ?? value.amount,
+                currency: updatedHouse.value?.currency ?? value.currency,
+                expenses: updatedHouse.value?.expenses ?? value.expenses
+            },
+            area: {
+                totalArea: updatedHouse.area?.totalArea ?? area.totalArea,
+                coveredArea: updatedHouse.area?.coveredArea ?? area.coveredArea,
+                unit: updatedHouse.area?.unit ?? area.unit
+            },
             status: updatedHouse.status ?? status,
             images: updatedHouse.images ?? images,
-            location: updatedHouse.location ?? location,
-            features: updatedHouse.features ?? features
+            location: {
+                neighborhood: updatedHouse.location?.neighborhood ?? location.neighborhood,
+                locality: updatedHouse.location?.locality ?? location.locality,
+                googleMapsLink: updatedHouse.location?.googleMapsLink ?? location.googleMapsLink
+            },
+            features: {
+                rooms: updatedHouse.features?.rooms ?? features.rooms,
+                bathrooms: updatedHouse.features?.bathrooms ?? features.bathrooms,
+                age: updatedHouse.features?.age ?? features.age,
+                type: updatedHouse.features?.type ?? features.type
+            },
+            isFavorite: updatedHouse.isFavorite ?? isFavorite
         };
 
         houses[houseIndex] = newHouse;
         return newHouse;
     }
+
+    public async deleteHouse(id: number): Promise<number | undefined> {
+        const houses = await this.getHouses();
+        const houseIndex = houses.findIndex(house => house.id === id);
+        if (houseIndex === -1) return undefined;
+
+        houses.splice(houseIndex, 1);
+        return id; 
+    }
+
+    // public async getHouseByNeighborhood(neighborhood: string): Promise<House[]> {
+    //     const houses = await this.getHouses();
+    //     return houses.filter(house => house.location.neighborhood.toLowerCase() === neighborhood.toLowerCase());
+    // }
 
 }

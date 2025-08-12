@@ -52,4 +52,28 @@ export class HouseController {
         res.json(updatedHouse);
     }
 
+    public deleteHouse = async(req: Request, res: Response) => {
+
+        if (!req.params.id) {
+            return res.status(400).json({ message: "House ID is required" });
+        }
+
+        const id: number = parseInt(req.params.id);
+        const deletedId: number | undefined = await new HouseServices().deleteHouse(id);
+        if (!deletedId) {
+            return res.status(404).json({ message: "House not found" });
+        }
+        res.status(204).send();
+    }
+
+    public getHousesByNeighborhood = async(req: Request, res: Response) => {
+        if (!req.params.neighborhood) {
+            return res.status(400).json({ message: "Neighborhood is required" });
+        }
+
+        const neighborhood: string = req.params.neighborhood;
+        const houses: House[] = await new HouseServices().getHousesByNeighborhood(neighborhood);
+        res.json(houses);
+    }
+
 }
