@@ -21,8 +21,12 @@ export class Server {
         this.publicPath = public_path;
     }
 
-    async start() {
+    //getApp se utiliza para los test de integración
+    public getApp() {
+        return this.app;
+    }
 
+    async initialConfig() {
         //Middlewares
         this.app.use(express.json());
         this.app.use(express.urlencoded({extended: true}));
@@ -36,7 +40,9 @@ export class Server {
 
         //Routes
         this.app.use(this.routes);
-        
+    }
+
+    async start() {        
         //Listen
         this.app.listen(this.port, () => {
             console.log(`Server is running on port ${this.port}`);

@@ -17,7 +17,7 @@ export class UserService {
         const hashed = this.hashPassword(user.password);
 
         const existingUser = await this.repo.getUserByEmail(user.email);
-        if (existingUser) throw new Error("Email already in use");
+        if (existingUser) throw new Error("Email already in use", { cause: { statusCode: 409 } });
 
         return this.repo.createUser({ ...user, password: hashed });
     }

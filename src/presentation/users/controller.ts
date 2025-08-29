@@ -10,8 +10,13 @@ export class UserController {
     };
 
     public create = async (req: Request, res: Response) => {
-        const user = await this.service.create(req.body);
-        res.status(201).json(user);
+        try {
+            const user = await this.service.create(req.body);
+            res.status(201).json(user);
+        } catch (error: any) {
+            const status = error?.cause?.statusCode || 500;
+            res.status(status).json({ message: error.message });
+        }
     };
 
     public update = async (req: Request, res: Response) => {

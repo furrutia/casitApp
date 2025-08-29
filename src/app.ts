@@ -13,6 +13,8 @@ function main() {
         public_path: envs.PUBLIC_PATH,
         routes: AppRoutes.routes
     });
-    server.start();
 
+    server.initialConfig();
+    server.start();
+    
 }

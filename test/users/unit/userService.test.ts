@@ -1,5 +1,5 @@
-import { UserService } from "../../src/presentation/users/services";
-import { User } from "../../src/presentation/users/interface";
+import { UserService } from "../../../src/presentation/users/services";
+import { User } from "../../../src/presentation/users/interface";
 
 describe("UserService", () => {
 
@@ -17,13 +17,13 @@ describe("UserService", () => {
 
     test("create debe crear un usuario y devolverlo", async () => {
         const userData = {
-        username: "nuevoUsuario",
-        email: "nuevo@correo.com",
-        password: "123456",
-        isAdmin: false,
-        isBlocked: false,
-        expiredAt: new Date(Date.now() + 10000000),
-        profileImage: "images/user2.webp"
+            username: "nuevoUsuario",
+            email: "nuevo@correo.com",
+            password: "123456",
+            isAdmin: false,
+            isBlocked: false,
+            expiredAt: new Date(Date.now() + 10000000),
+            profileImage: "images/user2.webp"
         };
         const user = await service.create(userData);
         expect(user).toHaveProperty("id");
