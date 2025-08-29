@@ -15,6 +15,10 @@ export class UserService {
 
     public async create(user: Omit<User, "id" | "password"> & { password: string }): Promise<User> {
         const hashed = this.hashPassword(user.password);
+
+        const existingUser = await this.repo.getUserByEmail(user.email);
+        if (existingUser) throw new Error("Email already in use");
+
         return this.repo.createUser({ ...user, password: hashed });
     }
 
