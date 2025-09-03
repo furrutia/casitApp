@@ -1,4 +1,6 @@
 import express, { Router } from 'express';
+import { setupSwagger } from "./swagger";
+
 const cors = require('cors');
 
 interface Options {
@@ -37,6 +39,9 @@ export class Server {
         // Habilita CORS para un origen específico
         const corsOptions = { origin: 'http://localhost:5173' };
         this.app.use(cors(corsOptions));
+
+        //swagger
+        setupSwagger(this.app);
 
         //Routes
         this.app.use(this.routes);
