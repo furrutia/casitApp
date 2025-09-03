@@ -37,7 +37,11 @@ export class Server {
         this.app.use(express.static(this.publicPath));
 
         // Habilita CORS para un origen específico
-        const corsOptions = { origin: 'http://localhost:5173' };
+        const corsOptions = {
+            origin: 'http://localhost:5173', // Solo permite este origen
+            methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
+            credentials: true // Permite enviar cookies/autenticación si es necesario
+        };
         this.app.use(cors(corsOptions));
 
         //swagger
