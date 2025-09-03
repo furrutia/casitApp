@@ -4,7 +4,18 @@ import { v4 as uuidv4 } from "uuid";
 
 const users: User[] = (mockUsers as any).default ?? mockUsers;
 
-export class UserRepository {
+export interface IUserRepository {
+    getUsers(): Promise<User[]>;
+    getUserById(id: string): Promise<User | undefined>;
+    getUserByUsername(username: string): Promise<User | undefined>;
+    getUserByEmail(email: string): Promise<User | undefined>;
+    createUser(user: Omit<User, "id">): Promise<User>;
+    updateUser(id: string, update: Partial<User>): Promise<User | undefined>;
+    deleteUser(id: string): Promise<boolean>;
+}
+
+
+export class UserRepository implements IUserRepository {
     public async getUsers(): Promise<User[]> {
         return users;
     }

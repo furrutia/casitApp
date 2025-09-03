@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { UserService } from "./services";
+import { IUserService } from "./services";
 
 /**
  * @swagger
@@ -8,8 +8,8 @@ import { UserService } from "./services";
  *   description: Endpoints para gestión de usuarios
  */
 export class UserController {
-    private service = new UserService();
-
+    
+    constructor(private service: IUserService) {}
 
 /**
  * @swagger
@@ -27,8 +27,8 @@ export class UserController {
  *               items:
  *                 $ref: '#/components/schemas/User'
  */
-    public list = async (_: Request, res: Response) => {
-        const users = await this.service.list();
+    public getUsers = async (_: Request, res: Response) => {
+        const users = await this.service.getUsers();
         res.json(users);
     };
 

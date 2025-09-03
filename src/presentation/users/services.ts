@@ -1,15 +1,24 @@
 import { User } from "./interface";
-import { UserRepository } from "./repository";
+import { IUserRepository } from "./repository";
 import crypto from "crypto";
 
+export interface IUserService {
+    getUsers(): Promise<User[]>;
+    create(user: Omit<User, "id" | "password"> & { password: string }): Promise<User>;
+    update(id: string, update: Partial<User>): Promise<User | undefined>;
+    delete(id: string): Promise<boolean>;
+    login(params: { username?: string; password: string }): Promise<{ success: boolean; user?: User; message?: string; statusCode: number }>;
+}
+
 export class UserService {
-    private repo = new UserRepository();
+
+    constructor(private repo: IUserRepository) {}
 
     private hashPassword(password: string): string {
         return crypto.createHash("sha256").update(password).digest("hex");
     }
 
-    public async list(): Promise<User[]> {
+    public async getUsers(): Promise<User[]> {
         return this.repo.getUsers();
     }
 
