@@ -1,5 +1,7 @@
 import { Router } from "express";
 import { HouseController } from "./controller";
+import { HouseRepository } from "./repository";
+import { HouseService } from "./services";
 
 
 export class HouseRoutes {
@@ -7,16 +9,15 @@ export class HouseRoutes {
     static get routes(): Router {
 
         const router = Router();
-        const houseController = new HouseController();
+        const houseRepository = new HouseRepository();
+        const houseService = new HouseService(houseRepository);
+        const houseController = new HouseController(houseService);
 
         router.get('/', houseController.getHouses);
         router.get('/:neighborhood', houseController.getHousesByNeighborhood);
-        // router.get('/valor', casaController.getCasasByValor);
-        // router.get('/barrio-valor', casaController.getCasasByBarrioAndValor);
         router.get('/:id', houseController.getHouseById);
         router.post('/', houseController.createHouse);
         router.put('/:id', houseController.updateHouse);
-        // router.delete('/:id', casaController.deleteCasa);
         
         return router;
 

@@ -1,7 +1,15 @@
 import { House } from "./interface";
 import * as mockHouses from "../../data/MockHouses.json";
 
-export class HouseRepository {
+export interface IHouseRepository {
+    getHouses(): Promise<House[]>;
+    getHouseById(id: number): Promise<House | undefined>;
+    createHouse(house: House): Promise<House>;
+    updateHouse(id: number, updatedHouse: Partial<House>): Promise<House | undefined>;
+    deleteHouse(id: number): Promise<number | undefined>;
+}
+
+export class HouseRepository implements IHouseRepository {
 
     public async getHouses(): Promise<House[]> {
         return new Promise((resolve) => {
